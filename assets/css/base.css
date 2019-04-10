@@ -1,12 +1,17 @@
 :root {
   /* light theme is the default */
+
+  /* common colors */
   --ziki-blue: #3667e7;
   --ziki-dark-blue: #04284a;
+  --ziki-red: red;
+  --ziki-gray: #999;
+  --ziki-light-gray: #ddd;
   --almost-white: #f8f8f8;
+
+  /* these change across themes */
   --default-bg-color: white;
   --default-text-color: black;
-  --fof-return-btn-bg-color: var(--ziki-blue);
-  --fof-return-btn-text-color: white;
   --fof-navbar-link-color: var(--ziki-blue);
   --fof-navbar-link-hover-color: black;
   --profile-bg-color: rgba(243, 243, 243, 0.62);
@@ -19,8 +24,16 @@
   --post-section-bg-color: var(--almost-white);
   --post-text-color: #555;
   --post-filter-text-color: #333;
+  --form-input-bg-color: var(--ziki-light-gray);
+  --badge-bg-color: var(--ziki-light-gray);
+  --badge-text-color: var(--default-text-color);
+  --sidebar-bg-color: var(--almost-white);
+  --selected-sidebar-item-bg-color: white;
 
   /* not changed across themes */
+  --default-btn-bg-color: #3869df;
+  --default-btn-text-color: white;
+  --default-btn-hover-bg-color: rgb(35, 70, 161);
   --blog-post-tag-bg-color: #aecdee;
   --blog-post-tag-text-color: black;
   --blog-details-pagination-btn-color: var(--ziki-blue);
@@ -28,6 +41,9 @@
   --blog-author-avatar-border-color: rgba(0, 0, 0, 0.5);
   --post-publish-btn-bg-color: #3869df;
   --post-publish-btn-text-color: white;
+  --red-btn: var(--ziki-red);
+  --red-btn-hover: firebrick;
+  --hovered-badge-bg-color: var(--ziki-gray);
 
   /* to transition the color */
   --theme-change-transition-duration: 0.3s;
@@ -49,6 +65,11 @@
   --post-section-bg-color: var(--ziki-dark-blue);
   --post-text-color: white;
   --post-filter-text-color: white;
+  --form-input-bg-color: var(--ziki-dark-blue);
+  --badge-bg-color: darkcyan;
+  --badge-text-color: black;
+  --sidebar-bg-color: var(--ziki-dark-blue);
+  --selected-sidebar-item-bg-color: var(--default-bg-color);
 }
 
 html {
@@ -130,14 +151,14 @@ button {
 }
 
 .fof-return-button {
-  background-color: var(--fof-return-btn-bg-color);
+  background-color: var(--default-btn-bg-color);
   font-size: 40px;
   width: 50%;
   padding: 24px 64px;
   border-radius: 11px;
   line-height: 30px;
   font-weight: bold;
-  color: var(--fof-return-btn-text-color);
+  color: var(--default-btn-text-color);
   text-align: center;
 }
 
@@ -975,15 +996,23 @@ user profile settings styling
 ============================*/
 
 .user-profile-button {
-  background-color: #3667e7;
+  background-color: var(--default-btn-bg-color);
   padding: 0.5rem;
-  color: #ffffff;
+  color: var(--default-btn-text-color);
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+  height: 45px;
+  transition: all ease-in-out 0.3s;
 }
+
+.user-profile-button:hover {
+  background-color: var(--default-btn-hover-bg-color);
+  cursor: pointer;
+}
+
 .motuns-main-container {
   /* display: flex */
   margin: 2rem;
@@ -998,7 +1027,6 @@ user profile settings styling
 
 .motuns-side-bar h3 {
   font-size: 25px;
-  color: #3667e7;
   /* margin-top: 20px; */
   /* padding-left: 160px; */
 }
@@ -1018,7 +1046,6 @@ user profile settings styling
 
 .homepage-link:hover {
   cursor: pointer;
-  color: rgb(35, 70, 161);
   transition: all ease-in-out 0.3s;
 }
 .user-profile-setting-form {
@@ -1027,7 +1054,8 @@ user profile settings styling
 }
 .user-profile-setting-form input {
   font-size: 14px;
-  background-color: #f8f8f8;
+  background-color: var(--form-input-bg-color);
+  color: var(--default-text-color);
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -1058,34 +1086,25 @@ user profile settings styling
   text-align: center;
 }
 .co-red {
-  color: red;
+  background-color: var(--red-btn);
+  color: white;
   /* font-size: 14px; */
   transition: all ease-in-out 0.3s;
 }
 .co-red:hover {
-  cursor: pointer;
-  color: rgb(168, 0, 0);
-  transition: all ease-in-out 0.3s;
+  background-color: var(--red-btn-hover);
 }
+
 .upcase {
   text-transform: uppercase;
   width: 100px;
-  height: 45px;
   margin: 0 auto;
   border: none;
-  transition: all ease-in-out 0.3s;
-}
-.capitalize {
-  text-transform: capitalize;
-  width: 138px;
-  height: 45px;
-  margin-left: 30%;
-  border: none;
-  transition: all ease-in-out 0.3s;
 }
 
 .en {
-  background-color: #f7f7f7;
+  background-color: var(--badge-bg-color);
+  color: var(--badge-text-color);
   text-transform: uppercase;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -1098,31 +1117,27 @@ user profile settings styling
 
 .en:hover {
   cursor: pointer;
-  background-color: rgb(185, 185, 185);
-  transition: all ease-in-out 0.3s;
+  background-color: var(--hovered-badge-bg-color);
+}
+
+.capitalize {
+  text-transform: capitalize;
+  width: 138px;
+  margin-left: 30%;
+  border: none;
 }
 
 .capitalize:hover {
-  background-color: rgb(35, 70, 161);
-  box-shadow: 1px 1px 10px #a7a7a7;
-  transition: all ease-in-out 0.3s;
+  background-color: var(--default-btn-hover-bg-color);
   cursor: pointer;
 }
-.upcase:hover {
-  background-color: rgb(35, 70, 161);
-  transition: all ease-in-out 0.3s;
-  box-shadow: 1px 1px 10px #a7a7a7;
-  cursor: pointer;
-}
+
 .sub {
   font-size: 14px;
   margin-bottom: 2rem;
 }
 
 .drop {
-  background-color: #ffffff;
-  color: #000000;
-  border: 1px solid #000000;
   margin-top: 1rem;
 }
 
@@ -1130,7 +1145,7 @@ user profile settings styling
   margin-top: 2rem;
 }
 .toggle {
-  background-color: #e0e0e0;
+  background-color: var(--ziki-light-gray);
   display: inline-flex;
   width: 40px;
   border-radius: 50px;
@@ -1158,14 +1173,13 @@ user profile settings styling
   }
 
   .motuns-side-bar {
-    background-color: #f7f7f7;
+    background-color: var(--sidebar-bg-color);
     width: 35%;
     display: block;
   }
 
   .motuns-side-bar h3 {
     font-size: 25px;
-    color: #3667e7;
     padding-top: 20%;
     padding-left: 47%;
   }
@@ -1174,7 +1188,7 @@ user profile settings styling
     font-size: 24px;
     padding-left: 47%;
     margin-top: 2rem;
-    background-color: #ffffff;
+    background-color: var(--selected-sidebar-item-bg-color);
     padding: 0.5rem 0 0.5rem 47%;
   }
 
@@ -1257,35 +1271,4 @@ user profile settings styling
     margin-top: -20%;
     margin-right: 9%;
   }
-}
-/*dark theme for user-profile-setting*/
-.dark .motuns-main-container {
-  background-color: #07223e;
-}
-
-.dark .motuns-side-bar {
-  background-color: #04274c;
-}
-
-.dark .motuns-side-bar p {
-  background: #07223e;
-}
-
-.dark .user-profile-input {
-  background: #04274c;
-  color: #ffffff;
-}
-.dark .en {
-  background: #04274c;
-}
-
-.dark .drop {
-  background: #04274c;
-  border: none;
-  color: #ffffff;
-}
-
-.dark .toggle {
-  background-color: #04274c;
-  fill: #ffffff;
 }
