@@ -398,6 +398,15 @@ div.blog-details-main-container {
   max-width: 1680px;
   margin: 0 auto;
 }
+div.blog-details-main-container .margin-right-h {
+  margin-right: 0.5rem;
+}
+div.blog-details-main-container .margin-right-1 {
+  margin-right: 1rem;
+}
+div.blog-details-main-container .mt--p3 {
+  margin-top: -0.3rem;
+}
 
 @media screen and (max-width: 768px) {
   div.blog-details-main-container {
@@ -1088,6 +1097,7 @@ user profile settings styling
 .co-red {
   background-color: var(--red-btn);
   color: white;
+  width: 150px;
   /* font-size: 14px; */
   transition: all ease-in-out 0.3s;
 }

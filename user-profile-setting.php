@@ -36,24 +36,24 @@
                     </div>
                     <form class="user-profile-setting-form" action="/action_page.php">
                         First name:<br>
-                        <input class="user-profile-input" type="text" name="firstname" value="Dragon">
+                        <input class="user-profile-input" type="text" name="firstname" placeholder="Dragon">
                         <br>
                         Last name:<br>
-                        <input class="user-profile-input" type="text" name="lastname" value="Blade">
+                        <input class="user-profile-input" type="text" name="lastname" placeholder="Blade">
                         <br>
                         Email Address:<br>
                         <input class="user-profile-input" type="text" name="firstname">
                         <br>
-                        Change passord:<br>
+                        Change password:<br>
                         <input class="user-profile-input" type="text" name="lastname">
 
                     </form>
 
                 </div>
                 <div class="d-flx sub">
-                    <button class="btn co-red">
-                        Delete my account
-                    </button>
+                    <span class="btn user-profile-button co-red">
+                        Delete account
+                    </span>
                     <p class="lang">
                         Language
                         <span class="en">
